@@ -1,0 +1,12 @@
+ifconfig eth0 up
+ifconfig eth1 up
+ifconfig eth2 up
+ifconfig eth3 up
+
+brctl addbr brd1
+brctl addif brd1 eth0
+brctl addif brd1 eth1
+brctl addif brd1 eth2
+brctl addif brd1 eth3
+
+ifconfig brd1 up

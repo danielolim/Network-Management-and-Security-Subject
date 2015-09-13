@@ -1,0 +1,19 @@
+/sbin/ifconfig eth0 10.20.72.6 netmask 255.255.255.0 up
+route add default gw 10.20.72.1 dev eth0
+
+useradd user1
+useradd user2
+useradd user3
+useradd user4
+
+echo user1:123 | chpasswd
+echo user2:123 | chpasswd
+echo user3:123 | chpasswd
+echo user4:123 | chpasswd
+
+a2enmod userdir
+
+/etc/init.d/apache2 start
+snmpd
+
+

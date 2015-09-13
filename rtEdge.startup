@@ -1,0 +1,21 @@
+ifconfig eth0 10.20.73.1 netmask 255.255.255.0 up
+ifconfig eth1 10.20.71.1 netmask 255.255.255.0 up
+ifconfig eth2 10.20.74.2 netmask 255.255.255.0 up
+ifconfig eth3 10.20.72.1 netmask 255.255.255.0 up
+
+route add -net 30.40.0.0/24 gw 10.20.74.1 dev eth2
+route add -net 30.40.2.0/24 gw 10.20.74.1 dev eth2
+route add -net 30.40.3.0/24 gw 10.20.74.1 dev eth2
+route add -net 192.168.1.0/24 gw 10.20.73.2 dev eth0
+
+iptables -F
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+iptables -t nat -P PREROUTING DROP
+iptables -t nat -P POSTROUTING DROP
+iptables -t nat -P OUTPUT DROP
+
+iptables-restore < /etc/finalv4.fw
+
+snmpd

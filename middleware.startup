@@ -1,0 +1,9 @@
+/sbin/ifconfig eth0 10.20.72.7 netmask 255.255.255.0 up
+
+route add default gw 10.20.72.1 dev eth0
+
+/etc/init.d/apache2 start
+
+env LANG=C /usr/bin/mrtg /root/mrtg.cfg
+
+indexmaker --output=/var/www/index.html /root/mrtg.cfg

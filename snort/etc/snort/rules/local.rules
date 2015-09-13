@@ -1,0 +1,14 @@
+
+var HTTP_SERVERS 10.20.72.6
+var EXTERNAL_NET any
+var HTTP_PORTS 80
+
+alert tcp any any -> $HTTP_SERVERS $HTTP_PORTS (msg: "SQL Injection Attempt - (') ou String " -- "; flow:to_server,established; uricontent: "'"; nocase; classtype:web-application-attack; sid:3000001; rev:1;)
+
+alert tcp any any -> $HTTP_SERVERS $HTTP_PORTS (msg: "SQL Injection Attempt - (') ou String " -- "; flow:to_server,established; uricontent: " -- "; nocase; classtype:web-application-attack; sid:3000002; rev:1;)
+
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"SQL Injection - Paranoid"; flow:to_server,established;uricontent:".pl";pcre:"/(\%27)|(\')|(\-\-)|(%23)|(#)/i"; classtype:Web-application-attack; sid:9099; rev:5;) 
+
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"WEB-ATTACKS /bin/ls command attempt"; flow:to_server,established; uricontent:"/bin/ls"; nocase; classtype:web-application-attack; sid:1369; rev:5;)
+
+alert tcp $EXTERNAL_NET any -> $HTTP_SERVERS $HTTP_PORTS (msg:"WEB-ATTACKS /bin/ps command attempt"; flow:to_server,established; uricontent:"/bin/ps"; nocase; classtype:web-application-attack; sid:1328; rev:6;)

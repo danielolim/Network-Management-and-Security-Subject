@@ -1,0 +1,16 @@
+$TTL    60000
+@               IN      SOA     dnsTo.to.          root.dnsTo.to. (
+                        2006031201 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS      dnsTo.to.
+dnsTo		IN	A	30.40.3.1
+
+teo.		IN	NS	dnsP.teo.to.
+dnsP.teo.	IN	A	10.20.71.3
+
+teo.		IN	NS	dnsS.teo.to.
+dnsS.teo.	IN	A	10.20.71.4

@@ -1,0 +1,18 @@
+$TTL    60000
+@               IN      SOA     dnsP.teo.to.          root.dnsP.teo.to. (
+                        2006031201 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS      dnsP.teo.to.
+@		IN	MX 5	mail.teo.to.
+
+dnsP            IN      A       10.20.71.3
+dnsS		IN	A	10.20.71.4
+
+imap		IN	A	10.20.71.5
+pop		IN	A	10.20.71.5
+mail		IN	A	10.20.71.5
+

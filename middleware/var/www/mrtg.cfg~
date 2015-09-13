@@ -1,0 +1,589 @@
+# Created by
+# /usr/bin/cfgmaker --global WorkDir:/var/www --output /var/www/mrtg.cfg private@10.20.71.5
+
+
+### Global Config Options
+
+#  for UNIX
+# WorkDir: /home/http/mrtg
+
+#  for Debian
+WorkDir: /var/www/mrtg
+
+#  or for NT
+# WorkDir: c:\mrtgdata
+
+### Global Defaults
+
+#  to get bits instead of bytes and graphs growing to the right
+# Options[_]: growright, bits
+
+EnableIPv6: no
+WorkDir:/var/www
+
+Target[graph1]: tcpCurrEstab.0&tcpCurrEstab.0:private@10.20.72.1
+MaxBytes[graph1]: 1000000
+Options[graph1]: gauge
+Title[graph1]: Numero Ligacoes TCP
+PageTop[graph1]: <H1>Ligacoes TCP %</H1>
+
+######################################################################
+# System: email
+# Description: Linux email 2.6.26.5-netkit-K2.8 #1 Thu Nov 26 15:37:25 CET 2009 i686
+# Contact: Root <root@localhost> (configure /etc/snmp/snmpd.local.conf)
+# Location: Unknown (configure /etc/snmp/snmpd.local.conf)
+######################################################################
+
+
+### Interface 1 >> Descr: 'lo' | Name: 'lo' | Ip: '127.0.0.1' | Eth: '' ###
+### The following interface is commented out because:
+### * it is a Software Loopback interface
+#
+# Target[10.20.71.5_1]: 1:private@10.20.71.5:
+# SetEnv[10.20.71.5_1]: MRTG_INT_IP="127.0.0.1" MRTG_INT_DESCR="lo"
+# MaxBytes[10.20.71.5_1]: 1250000
+# Title[10.20.71.5_1]: Traffic Analysis for 1 -- email
+# PageTop[10.20.71.5_1]: <h1>Traffic Analysis for 1 -- email</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>email in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>lo  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>softwareLoopback (24)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>lo</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>1250.0 kBytes/s</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Ip:</td>
+#                                       <td>127.0.0.1 (pcgestor)</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 2 >> Descr: 'teql0' | Name: 'teql0' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * it is administratively DOWN
+### * it is operationally DOWN
+### * has a speed of 0 which makes no sense
+#
+# Target[10.20.71.5_2]: 2:private@10.20.71.5:
+# SetEnv[10.20.71.5_2]: MRTG_INT_IP="" MRTG_INT_DESCR="teql0"
+# MaxBytes[10.20.71.5_2]: 0
+# Title[10.20.71.5_2]: Traffic Analysis for 2 -- email
+# PageTop[10.20.71.5_2]: <h1>Traffic Analysis for 2 -- email</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>email in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>teql0  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>Other (1)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>teql0</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>0.0 Bytes/s</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 3 >> Descr: 'eth0' | Name: 'eth0' | Ip: '10.20.71.5' | Eth: '42-fd-a9-81-fa-bd' ###
+
+Target[10.20.71.5_3]: 3:private@10.20.71.5:
+SetEnv[10.20.71.5_3]: MRTG_INT_IP="10.20.71.5" MRTG_INT_DESCR="eth0"
+MaxBytes[10.20.71.5_3]: 1250000
+Title[10.20.71.5_3]: Analise do trafego para a porta eth0 do servidor de email
+PageTop[10.20.71.5_3]: <h1>Analise do trafego para a porta eth0 do servidor de email</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>email in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth0  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth0</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.71.5 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+######################################################################
+# System: rtEdge
+# Description: Linux rtEdge 2.6.26.5-netkit-K2.8 #1 Thu Nov 26 15:37:25 CET 2009 i686
+# Contact: Root <root@localhost> (configure /etc/snmp/snmpd.local.conf)
+# Location: Unknown (configure /etc/snmp/snmpd.local.conf)
+######################################################################
+
+
+### Interface 1 >> Descr: 'lo' | Name: 'lo' | Ip: '127.0.0.1' | Eth: '' ###
+### The following interface is commented out because:
+### * it is a Software Loopback interface
+#
+# Target[10.20.72.1_1]: 1:private@10.20.72.1:
+# SetEnv[10.20.72.1_1]: MRTG_INT_IP="127.0.0.1" MRTG_INT_DESCR="lo"
+# MaxBytes[10.20.72.1_1]: 1250000
+# Title[10.20.72.1_1]: Traffic Analysis for 1 -- rtEdge
+# PageTop[10.20.72.1_1]: <h1>Traffic Analysis for 1 -- rtEdge</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>lo  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>softwareLoopback (24)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>lo</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>1250.0 kBytes/s</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Ip:</td>
+#                                       <td>127.0.0.1 (pcgestor)</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 2 >> Descr: 'teql0' | Name: 'teql0' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * it is administratively DOWN
+### * it is operationally DOWN
+### * has a speed of 0 which makes no sense
+#
+# Target[10.20.72.1_2]: 2:private@10.20.72.1:
+# SetEnv[10.20.72.1_2]: MRTG_INT_IP="" MRTG_INT_DESCR="teql0"
+# MaxBytes[10.20.72.1_2]: 0
+# Title[10.20.72.1_2]: Traffic Analysis for 2 -- rtEdge
+# PageTop[10.20.72.1_2]: <h1>Traffic Analysis for 2 -- rtEdge</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>teql0  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>Other (1)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>teql0</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>0.0 Bytes/s</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 3 >> Descr: 'eth0' | Name: 'eth0' | Ip: '10.20.73.1' | Eth: 'ca-ca-79-c4-74-52' ###
+
+Target[10.20.72.1_3]: 3:private@10.20.72.1:
+SetEnv[10.20.72.1_3]: MRTG_INT_IP="10.20.73.1" MRTG_INT_DESCR="eth0"
+MaxBytes[10.20.72.1_3]: 1250000
+Title[10.20.72.1_3]: Analise do trafego para a porta eth0 do Edge Router (rtEdge)
+PageTop[10.20.72.1_3]: <h1>Analise do trafego para a porta eth0 do Edge Router (rtEdge)</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth0  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth0</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.73.1 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+
+### Interface 4 >> Descr: 'eth1' | Name: 'eth1' | Ip: '10.20.71.1' | Eth: '16-78-a5-65-3e-e9' ###
+
+Target[10.20.72.1_4]: 4:private@10.20.72.1:
+SetEnv[10.20.72.1_4]: MRTG_INT_IP="10.20.71.1" MRTG_INT_DESCR="eth1"
+MaxBytes[10.20.72.1_4]: 1250000
+Title[10.20.72.1_4]: Analise do trafego para a porta eth1 do Edge Router (rtEdge)
+PageTop[10.20.72.1_4]: <h1>Analise do trafego para a porta eth1 do Edge Router (rtEdge)</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth1  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth1</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.71.1 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+
+### Interface 5 >> Descr: 'eth2' | Name: 'eth2' | Ip: '10.20.74.2' | Eth: 'd6-a6-f1-a6-2f-e9' ###
+
+Target[10.20.72.1_5]: 5:private@10.20.72.1:
+SetEnv[10.20.72.1_5]: MRTG_INT_IP="10.20.74.2" MRTG_INT_DESCR="eth2"
+MaxBytes[10.20.72.1_5]: 1250000
+Title[10.20.72.1_5]: Analise do trafego para a porta eth2 do Edge Router (rtEdge)
+PageTop[10.20.72.1_5]: <h1>Analise do trafego para a porta eth2 do Edge Router (rtEdge)</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth2  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth2</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.74.2 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+
+### Interface 6 >> Descr: 'eth3' | Name: 'eth3' | Ip: '10.20.72.1' | Eth: '9e-9d-0c-6a-51-06' ###
+
+Target[10.20.72.1_6]: 6:private@10.20.72.1:
+SetEnv[10.20.72.1_6]: MRTG_INT_IP="10.20.72.1" MRTG_INT_DESCR="eth3"
+MaxBytes[10.20.72.1_6]: 1250000
+Title[10.20.72.1_6]: Analise do trafego para a porta eth3 do Edge Router (rtEdge)
+PageTop[10.20.72.1_6]: <h1>Analise do trafego para a porta eth3 do Edge Router (rtEdge)</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtEdge in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth3  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth3</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.72.1 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+######################################################################
+# System: rtDomes
+# Description: Linux rtDomes 2.6.26.5-netkit-K2.8 #1 Thu Nov 26 15:37:25 CET 2009 i686
+# Contact: Root <root@localhost> (configure /etc/snmp/snmpd.local.conf)
+# Location: Unknown (configure /etc/snmp/snmpd.local.conf)
+######################################################################
+
+
+### Interface 1 >> Descr: 'lo' | Name: 'lo' | Ip: '127.0.0.1' | Eth: '' ###
+### The following interface is commented out because:
+### * it is a Software Loopback interface
+#
+# Target[10.20.73.2_1]: 1:private@10.20.73.2:
+# SetEnv[10.20.73.2_1]: MRTG_INT_IP="127.0.0.1" MRTG_INT_DESCR="lo"
+# MaxBytes[10.20.73.2_1]: 1250000
+# Title[10.20.73.2_1]: Traffic Analysis for 1 -- rtDomes
+# PageTop[10.20.73.2_1]: <h1>Traffic Analysis for 1 -- rtDomes</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>rtDomes in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>lo  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>softwareLoopback (24)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>lo</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>1250.0 kBytes/s</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Ip:</td>
+#                                       <td>127.0.0.1 (pcgestor)</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 2 >> Descr: 'teql0' | Name: 'teql0' | Ip: '' | Eth: '' ###
+### The following interface is commented out because:
+### * it is administratively DOWN
+### * it is operationally DOWN
+### * has a speed of 0 which makes no sense
+#
+# Target[10.20.73.2_2]: 2:private@10.20.73.2:
+# SetEnv[10.20.73.2_2]: MRTG_INT_IP="" MRTG_INT_DESCR="teql0"
+# MaxBytes[10.20.73.2_2]: 0
+# Title[10.20.73.2_2]: Traffic Analysis for 2 -- rtDomes
+# PageTop[10.20.73.2_2]: <h1>Traffic Analysis for 2 -- rtDomes</h1>
+#               <div id="sysdetails">
+#                       <table>
+#                               <tr>
+#                                       <td>System:</td>
+#                                       <td>rtDomes in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Maintainer:</td>
+#                                       <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Description:</td>
+#                                       <td>teql0  </td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifType:</td>
+#                                       <td>Other (1)</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>ifName:</td>
+#                                       <td>teql0</td>
+#                               </tr>
+#                               <tr>
+#                                       <td>Max Speed:</td>
+#                                       <td>0.0 Bytes/s</td>
+#                               </tr>
+#                       </table>
+#               </div>
+
+
+### Interface 3 >> Descr: 'eth0' | Name: 'eth0' | Ip: '192.168.1.1' | Eth: 'b2-fd-7a-ac-cb-15' ###
+
+Target[10.20.73.2_3]: 3:private@10.20.73.2:
+SetEnv[10.20.73.2_3]: MRTG_INT_IP="192.168.1.1" MRTG_INT_DESCR="eth0"
+MaxBytes[10.20.73.2_3]: 1250000
+Title[10.20.73.2_3]: Analise do trafego para a porta eth0 do Router Domestico (rtDomes) 
+PageTop[10.20.73.2_3]: <h1>Traffic Analysis for 3 -- rtDomes</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtDomes in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth0  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth0</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>192.168.1.1 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
+
+### Interface 4 >> Descr: 'eth1' | Name: 'eth1' | Ip: '10.20.73.2' | Eth: '72-f3-36-4e-0b-c6' ###
+
+Target[10.20.73.2_4]: 4:private@10.20.73.2:
+SetEnv[10.20.73.2_4]: MRTG_INT_IP="10.20.73.2" MRTG_INT_DESCR="eth1"
+MaxBytes[10.20.73.2_4]: 1250000
+Title[10.20.73.2_4]: Traffic Analysis for 4 -- rtDomes
+PageTop[10.20.73.2_4]: <h1>Traffic Analysis for 4 -- rtDomes</h1>
+                <div id="sysdetails">
+                        <table>
+                                <tr>
+                                        <td>System:</td>
+                                        <td>rtDomes in Unknown (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Maintainer:</td>
+                                        <td>Root &lt;root@localhost&gt; (configure /etc/snmp/snmpd.local.conf)</td>
+                                </tr>
+                                <tr>
+                                        <td>Description:</td>
+                                        <td>eth1  </td>
+                                </tr>
+                                <tr>
+                                        <td>ifType:</td>
+                                        <td>ethernetCsmacd (6)</td>
+                                </tr>
+                                <tr>
+                                        <td>ifName:</td>
+                                        <td>eth1</td>
+                                </tr>
+                                <tr>
+                                        <td>Max Speed:</td>
+                                        <td>1250.0 kBytes/s</td>
+                                </tr>
+                                <tr>
+                                        <td>Ip:</td>
+                                        <td>10.20.73.2 ()</td>
+                                </tr>
+                        </table>
+                </div>
+
